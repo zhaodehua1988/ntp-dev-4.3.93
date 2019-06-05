@@ -1,0 +1,18 @@
+一。x86编译 
+   ./configure
+   make 
+二。arm编译
+（1）./configure --host=arm-none-linux-gnueabi --with-yielding-select=yes
+     
+（2）在ntpd/ntp_loopfilter.c中增加下面的宏定义
+#ifndef MOD_NANO
+#define MOD_NANO  0x2000
+#endif
+
+三。hisi处理器编译
+
+（1）./configure --host=arm-hisiv200-linux --with-yielding-select=yes
+（2）在ntpd/ntp_loopfilter.c中增加下面的宏定义
+#ifndef MOD_NANO
+#define MOD_NANO  0x2000
+#endif
